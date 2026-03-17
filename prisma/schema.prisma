@@ -34,8 +34,8 @@ model Transaction {
   createdAt   DateTime   @default(now())
 
   // wallet relations
-  fromWalletId String
-  fromWallet  Wallet @relation("sender", fields: [fromWalletId], references: [id])
+  fromWalletId String?
+  fromWallet  Wallet? @relation("sender", fields: [fromWalletId], references: [id])
 
   toWalletId   String
   toWallet    Wallet @relation("receiver", fields: [toWalletId], references: [id])
